@@ -38,7 +38,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Signup from "./components/Signup"; 
+
+
+// import SignUp from "./components/signup";
+// import SignIn from "./components/SignIn";
+
 import SignIn from "./components/SignIn";
 import ForgetPassword from "./components/ForgetPassword";
 import Dashboard from "./components/UserDashboard";
@@ -51,7 +55,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signin" element={<SignIn/>} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<UserProfile />} />
