@@ -38,18 +38,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Signup from "../src/components/signup"; 
+// import Signup from "./components/Signup"; 
 import SignIn from "./components/SignIn";
 import ForgetPassword from "./components/ForgetPassword";
 import Dashboard from "./components/UserDashboard";
 import UserProfile from "./components/UserProfile";
+import SignUp from "./components/signup";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Signup />} />
+        <Route path="/" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/dashboard" element={<Dashboard />} />
