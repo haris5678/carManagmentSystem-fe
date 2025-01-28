@@ -1,57 +1,16 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-// import "./App.css";
-// import Signup from "../src/components/signup"; // Import Signup component
-
-// function App() {
-//   return (
-//     <Router>
-//       <div>
-//         <div>
-//           <a href="https://vite.dev" target="_blank">
-//             <img src={viteLogo} className="logo" alt="Vite logo" />
-//           </a>
-//           <a href="https://react.dev" target="_blank">
-//             <img src={reactLogo} className="logo react" alt="React logo" />
-//           </a>
-//         </div>
-//         <h1>Vite + React</h1>
-//         <Routes>
-//           <Route path="/signup" element={<Signup />} />
-
-//           <Route
-//             path="/"
-//             element={
-//               <p>Welcome! Use /signup to navigate to the signup page.</p>
-//             }
-//           />
-//         </Routes>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// import SignUp from "./components/signup";
-// import SignIn from "./components/SignIn";
-
-import SignIn from "./components/SignIn";
-import ForgetPassword from "./components/ForgetPassword";
-import Dashboard from "./components/UserDashboard";
-import UserProfile from "./components/UserProfile";
-import SignUp from "./components/signup";
-import AddCar from "./components/AddCar";
-import CarDetails from "./components/CarDetails";
-import AdminDashboard from "./components/AdminDashboard";
-import AddCategory from "./components/AddCategory";
-import Car from "./components/AdminCar";
+import SignIn from "/src/components/Signin";
+import ForgetPassword from "/src/components/ForgetPassword";
+import Dashboard from "/src/components/UserDashboard";
+import UserProfile from "/src/components/UserProfile";
+import SignUp from "/src/components/signup";
+import AddCar from "/src/components/AddCar";
+import CarDetails from "/src/components/CarDetails";
+import AdminDashboard from "/src/components/AdminDashboard";
+import AddCategory from "/src/components/AddCategory";
+import Car from "/src/components/AdminCar";
 
 function App() {
   return (
