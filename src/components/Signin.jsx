@@ -26,7 +26,7 @@ const SignIn = () => {
 
       // Store token and role in localStorage
       const { role } = response.data.user;
-      const token  = response.data.token; // Assuming API returns `role` along with `token`
+      const token = response.data.token; // Assuming API returns `role` along with `token`
       localStorage.setItem("authToken", token);
       localStorage.setItem("userRole", role);
 

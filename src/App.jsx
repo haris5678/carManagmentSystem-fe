@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SignIn from "/src/components/SignIn";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 import ForgetPassword from "/src/components/ForgetPassword";
 import Dashboard from "/src/components/UserDashboard";
 import UserProfile from "/src/components/UserProfile";
-import SignUp from "/src/components/SignUp";
 import AddCar from "/src/components/AddCar";
 import CarDetails from "/src/components/CarDetails";
 import AdminDashboard from "/src/components/AdminDashboard";
