@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { BiShow } from "react-icons/bi";
 import axios from "axios";
+import CarDetailsModal from "./CarDetailsModal";
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
   const [error, setError] = useState("");
+  const [selectedCar, setSelectedCar] = useState(null); // To store the selected car for viewing
 
   // Fetch all cars
   const fetchCars = async () => {
@@ -34,6 +36,15 @@ const Cars = () => {
     fetchCars();
   }, []);
 
+  const onViewCar = (carId) => {
+    const car = cars.find((c) => c._id === carId);
+    setSelectedCar(car); // Set the selected car for the modal
+  };
+
+  const closeModal = () => {
+    setSelectedCar(null); // Close the modal by resetting selected car
+  };
+
   return (
     <div className="p-4">
       {error && <div className="alert alert-danger">{error}</div>}
@@ -58,6 +69,11 @@ const Cars = () => {
           <li className="list-group-item">No cars found.</li>
         )}
       </ul>
+
+      {/* Render CarDetailsModal */}
+      {selectedCar && (
+        <CarDetailsModal car={selectedCar} onClose={closeModal} />
+      )}
     </div>
   );
 };
