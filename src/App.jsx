@@ -1,4 +1,3 @@
-import "./App.css";
 import Car from "./components/AdminCar";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
