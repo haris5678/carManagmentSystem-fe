@@ -27,7 +27,10 @@ const SignUp = () => {
   });
 
   // Handle Form Submission
-  const handleSubmit = async (values, { setSubmitting, resetForm, setErrors }) => {
+  const handleSubmit = async (
+    values,
+    { setSubmitting, resetForm, setErrors }
+  ) => {
     try {
       const response = await axios.post(
         "https://carmanagment.duckdns.org/api/auth/signup",
@@ -39,7 +42,9 @@ const SignUp = () => {
       navigate("/signin");
     } catch (err) {
       setErrors({
-        api: err.response?.data?.error || "Something went wrong. Please try again.",
+        api:
+          err.response?.data?.error ||
+          "Something went wrong. Please try again.",
       });
     } finally {
       setSubmitting(false);
@@ -69,7 +74,9 @@ const SignUp = () => {
           {({ isSubmitting, errors }) => (
             <Form>
               {errors.api && (
-                <div className="alert alert-danger text-center">{errors.api}</div>
+                <div className="alert alert-danger text-center">
+                  {errors.api}
+                </div>
               )}
 
               <div className="mb-3">
@@ -119,7 +126,11 @@ const SignUp = () => {
                   className="form-control"
                   placeholder="Enter your email address"
                 />
-                <ErrorMessage name="email" component="div" className="text-danger" />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-danger"
+                />
               </div>
 
               <div className="mb-3">
