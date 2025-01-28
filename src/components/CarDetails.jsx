@@ -3,12 +3,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const CarDetails = () => {
-  const { id } = useParams(); // Get car ID from URL
-  const [car, setCar] = useState(null); // Car details state
-  const [error, setError] = useState(""); // Error state
-  const [successMessage, setSuccessMessage] = useState(""); // Success message state
-  const [loading, setLoading] = useState(true); // Loading state
-  const navigate = useNavigate(); // For navigation
+  const { id } = useParams(); 
+  const [car, setCar] = useState(null); 
+  const [error, setError] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState(""); 
+  const [loading, setLoading] = useState(true); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCarDetails = async () => {

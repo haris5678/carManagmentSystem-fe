@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const DashboardMain = () => {
   const [dashboardData, setDashboardData] = useState(null);
   const [categories, setCategories] = useState([]);
-  const [modalType, setModalType] = useState(""); // 'add', 'edit', or 'view'
+  const [modalType, setModalType] = useState(""); 
   const [categoryData, setCategoryData] = useState({
     name: "",
     description: "",
@@ -90,12 +90,12 @@ const DashboardMain = () => {
           : "Category added successfully!"
       );
       setError("");
-      setModalType(""); // Close the modal
+      setModalType(""); 
       setCategoryData({ name: "", description: "" });
 
-      fetchCategories(); // Refresh categories
+      fetchCategories(); 
 
-      setTimeout(() => setSuccessMessage(""), 3000); // Clear success message
+      setTimeout(() => setSuccessMessage(""), 3000); 
     } catch (err) {
       console.error(err);
       setError("Failed to save category. Please try again.");
@@ -114,7 +114,7 @@ const DashboardMain = () => {
       );
       setSuccessMessage("Category deleted successfully!");
       setError("");
-      fetchCategories(); // Refresh category list
+      fetchCategories(); 
     } catch (err) {
       console.error(err);
       setError("Failed to delete category. Please try again.");

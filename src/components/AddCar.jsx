@@ -36,7 +36,7 @@ const AddCar = () => {
             },
           }
         );
-        setCategories(response.data.categories); // Assuming the API returns { categories: [...] }
+        setCategories(response.data.categories); 
         setError("");
       } catch (err) {
         console.error(err);

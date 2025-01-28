@@ -25,7 +25,6 @@ const validationSchema = Yup.object({
 const SignUp = () => {
   const navigate = useNavigate();
 
-  // Handle Form Submission
   const handleSubmit = async (
     values,
     { setSubmitting, resetForm, setErrors }

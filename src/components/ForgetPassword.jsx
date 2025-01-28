@@ -18,14 +18,14 @@ const ForgetPassword = () => {
         values
       );
       setMessage("Password reset link has been sent to your email!");
-      setError(""); // Clear any errors
-      console.log(response.data); // Debug the response if needed
+      setError(""); 
+      console.log(response.data); 
     } catch (err) {
       console.error(err);
       setError(
         err.response?.data?.message || "Something went wrong. Please try again."
       );
-      setMessage(""); // Clear success messages
+      setMessage(""); 
     } finally {
       setSubmitting(false);
     }

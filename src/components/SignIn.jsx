@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 const SignIn = () => {
   const navigate = useNavigate();
 
-  // Yup Validation Schema
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email address")
@@ -16,7 +15,7 @@ const SignIn = () => {
       .required("Password is required"),
   });
 
-  // Handle Form Submission
+
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
       const response = await axios.post(
@@ -24,9 +23,8 @@ const SignIn = () => {
         values
       );
 
-      // Store token and role in localStorage
       const { role } = response.data.user;
-      const token = response.data.token; // Assuming API returns `role` along with `token`
+      const token = response.data.token; 
       localStorage.setItem("authToken", token);
       localStorage.setItem("userRole", role);
 
@@ -34,7 +32,7 @@ const SignIn = () => {
 
       console.log("token is ", token);
       console.log("role is ", response.data.token);
-      // Redirect based on role
+
       if (role == "admin") {
         navigate("/admin-dashboard");
       } else if (role == "user") {

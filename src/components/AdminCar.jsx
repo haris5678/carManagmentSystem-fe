@@ -38,11 +38,11 @@ const Cars = () => {
 
   const onViewCar = (carId) => {
     const car = cars.find((c) => c._id === carId);
-    setSelectedCar(car); // Set the selected car for the modal
+    setSelectedCar(car); 
   };
 
   const closeModal = () => {
-    setSelectedCar(null); // Close the modal by resetting selected car
+    setSelectedCar(null);
   };
 
   return (

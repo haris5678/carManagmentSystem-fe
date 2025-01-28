@@ -8,7 +8,7 @@ const UserProfile = () => {
     lastName: "",
     email: "",
     phone_no: "",
-    password: "", // For password update
+    password: "", 
   });
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -34,7 +34,7 @@ const UserProfile = () => {
             },
           }
         );
-        setUserData({ ...response.data.user, password: "" }); // Initialize data and clear password
+        setUserData({ ...response.data.user, password: "" }); 
         setError("");
       } catch (err) {
         console.error(err);

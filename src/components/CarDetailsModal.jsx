@@ -1,5 +1,5 @@
 const CarDetailsModal = ({ car, onClose }) => {
-  if (!car) return null; // Don't render anything if no car is selected
+  if (!car) return null; 
 
   return (
     <div
