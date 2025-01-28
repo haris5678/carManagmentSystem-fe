@@ -1,16 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Car from "./components/AdminCar";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
-import ForgetPassword from "./components/ForgetPassword";
+import AddCar from "./components/AddCar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import CarDetails from "./components/CarDetails";
 import Dashboard from "./components/UserDashboard";
 import UserProfile from "./components/UserProfile";
-import AddCar from "./components/AddCar";
-import CarDetails from "./components/CarDetails";
-import AdminDashboard from "./components/AdminDashboard";
 import AddCategory from "./components/AddCategory";
-import Car from "./components/AdminCar";
+import ForgetPassword from "./components/ForgetPassword";
+import AdminDashboard from "./components/AdminDashboard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (

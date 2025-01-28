@@ -1,30 +1,29 @@
-import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+
+const validationSchema = Yup.object({
+  firstName: Yup.string()
+    .trim()
+    .required("First name is required")
+    .min(2, "First name must be at least 2 characters")
+    .max(30, "First name must be 30 characters or less"),
+  lastName: Yup.string()
+    .trim()
+    .required("Last name is required")
+    .min(2, "Last name must be at least 2 characters")
+    .max(30, "Last name must be 30 characters or less"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  phone_no: Yup.string()
+    .matches(/^\d{11}$/, "Phone number must be exactly 11 digits")
+    .required("Phone number is required"),
+});
 
 const SignUp = () => {
   const navigate = useNavigate();
-
-  // Yup Validation Schema
-  const validationSchema = Yup.object({
-    firstName: Yup.string()
-      .trim()
-      .required("First name is required")
-      .min(2, "First name must be at least 2 characters")
-      .max(30, "First name must be 30 characters or less"),
-    lastName: Yup.string()
-      .trim()
-      .required("Last name is required")
-      .min(2, "Last name must be at least 2 characters")
-      .max(30, "Last name must be 30 characters or less"),
-    email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
-    phone_no: Yup.string()
-      .matches(/^\d{11}$/, "Phone number must be exactly 11 digits")
-      .required("Phone number is required"),
-  });
 
   // Handle Form Submission
   const handleSubmit = async (
