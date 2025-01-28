@@ -24,16 +24,30 @@ const SignIn = () => {
         values
       );
 
-      // Store token in localStorage
-      const token = response.data.token; // Assuming the token is in `response.data.token`
+      // Store token and role in localStorage
+      const { role } = response.data.user;
+      const token  = response.data.token; // Assuming API returns `role` along with `token`
       localStorage.setItem("authToken", token);
+      localStorage.setItem("userRole", role);
 
       alert("Login successful!");
-      navigate("/dashboard");
+
+      console.log("token is ", token);
+      console.log("role is ", response.data.token);
+      // Redirect based on role
+      if (role == "admin") {
+        navigate("/admin-dashboard");
+      } else if (role == "user") {
+        navigate("/dashboard");
+      } else {
+        throw new Error("Invalid role. Please contact support.");
+      }
     } catch (err) {
       console.error(err);
       setErrors({
-        api: err.response?.data?.message || "Invalid login credentials. Please try again.",
+        api:
+          err.response?.data?.message ||
+          "Invalid login credentials. Please try again.",
       });
     } finally {
       setSubmitting(false);
@@ -61,7 +75,9 @@ const SignIn = () => {
           {({ isSubmitting, errors }) => (
             <Form>
               {errors.api && (
-                <div className="alert alert-danger text-center">{errors.api}</div>
+                <div className="alert alert-danger text-center">
+                  {errors.api}
+                </div>
               )}
 
               <div className="mb-3">
