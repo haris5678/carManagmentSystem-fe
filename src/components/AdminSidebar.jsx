@@ -15,7 +15,10 @@ const AdminSidebar = () => {
           </a>
         </li>
         <li className="mb-3">
-          <a href="/cars" className="text-white text-decoration-none">
+          <a
+            href="admin-dashboard/cars"
+            className="text-white text-decoration-none"
+          >
             Car
           </a>
         </li>

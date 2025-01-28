@@ -9,6 +9,7 @@ import UserProfile from "./components/UserProfile";
 import AddCategory from "./components/AddCategory";
 import ForgetPassword from "./components/ForgetPassword";
 import AdminDashboard from "./components/AdminDashboard";
+import DashboardMain from "./components/DashboardMain";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -18,8 +19,10 @@ function App() {
         <Route path="/" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/cars" element={<Car />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />}>
+          <Route index element={<DashboardMain />} />
+          <Route path="cars" element={<Car />} />
+        </Route>
         <Route path="/add-category" element={<AddCategory />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<UserProfile />} />

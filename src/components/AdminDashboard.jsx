@@ -1,6 +1,6 @@
+import { Outlet } from "react-router-dom";
 import AppNavbar from "./AppNavbar";
 import AdminSidebar from "./AdminSidebar";
-import DashboardMain from "./DashboardMain";
 
 const AdminDashboard = () => {
   const handleLogout = () => {
@@ -13,7 +13,7 @@ const AdminDashboard = () => {
       <AdminSidebar />
       <div className="flex-grow-1">
         <AppNavbar onLogout={handleLogout} />
-        <DashboardMain />
+        <Outlet />
       </div>
     </div>
   );
